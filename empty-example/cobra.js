@@ -8,7 +8,14 @@ function cobra(){
         this.x += this.xvelocidade*tamanho;
         this.y += this.yvelocidade*tamanho;
     }
-
+    this.come = function(pos){
+        let distancia = dist(this.x, this.y, pos.x, pos.y);
+        if(distancia<1){
+            return true;
+        }else{
+            return false;
+        }
+    }
     this.show = function(){
         fill(255);
         rect(this.x,this.y,tamanho,tamanho);
